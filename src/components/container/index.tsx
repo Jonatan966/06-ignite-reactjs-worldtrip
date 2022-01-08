@@ -1,13 +1,22 @@
 import { Box, ChakraComponent, As, BoxProps } from '@chakra-ui/react'
 
 type ContainerProps<X, Y> = {
-  as?: ChakraComponent<X & As, Y>
+  customTag?: X,
+  as?: ChakraComponent<X & As, Y>,
 } &  Y
 
-export default function Container<X = 'div', Y = BoxProps>({
-  as: theAs, 
+export default function Container<X extends keyof JSX.IntrinsicElements, Y = BoxProps>({
+  customTag,
+  as: theAs,
   ...props
 }: ContainerProps<X, Y>) {
+  if (theAs) {
+    theAs.defaultProps = {
+      ...theAs.defaultProps,
+      as: customTag
+    }
+  }
+
   return (
     <Box
       as={theAs as any} 
