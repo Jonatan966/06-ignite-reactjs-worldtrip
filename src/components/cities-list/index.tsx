@@ -17,7 +17,7 @@ export default function CitiesList({ cities = [] }: CitiesListProps) {
       >
         Cidades +100
       </Text>
-      <SimpleGrid columns={[1, null, 2, 3, 4]} spacing='12' my={['5', '10']}>
+      <SimpleGrid columns={[1, 2, 3, 4]} spacing='12' my={['5', '10']}>
         {cities.map((city) => <CityCard key={city.name} {...city} />)}
       </SimpleGrid>
     </Container>
