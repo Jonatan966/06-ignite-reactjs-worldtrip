@@ -4,7 +4,7 @@ import Container from '../container'
 import { InfoCard } from './info-card'
 import { Continent } from '../../types'
 
-type ContinentDetailsProps = Omit<Continent, 'image' | 'name'>
+type ContinentDetailsProps = Pick<Continent, 'description' | 'details'>
 
 export default function ContinentDetails({
   description,
