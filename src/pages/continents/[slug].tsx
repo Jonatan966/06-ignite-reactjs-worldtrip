@@ -2,7 +2,7 @@ import Prismic from '@prismicio/client'
 import { Document } from '@prismicio/client/types/documents'
 import type { GetStaticPaths, GetStaticProps } from 'next'
 
-import { CitiesList, ContinentBanner, ContinentDetails } from '../../components'
+import { AppHead, CitiesList, ContinentBanner, ContinentDetails } from '../../components'
 import { getPrismicClient } from '../../services/prismic'
 import { City, Continent, Image } from '../../types'
 
@@ -42,6 +42,7 @@ export default function ContinentPage({
 }: ContinentPageProps) {
   return (
     <>
+      <AppHead title={name} />
       <ContinentBanner image={image} name={name} />
       <ContinentDetails best_cities_amount={cities.length} {...details} />
       <CitiesList cities={cities} />
