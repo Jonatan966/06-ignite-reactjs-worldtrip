@@ -4,16 +4,15 @@ import Container from '../container'
 import { InfoCard } from './info-card'
 import { Continent } from '../../types'
 
-type ContinentDetailsProps = Pick<Continent, 'description' | 'details'>
+type ContinentDetailsProps = Pick<Continent, 'description' | 'countries_amount' | 'languages_amount'> & {
+  best_cities_amount: number,
+}
 
 export default function ContinentDetails({
   description,
-  details:
-  {
-    bestCitiesAmount,
-    countriesAmount,
-    languagesAmount
-  }
+  languages_amount,
+  countries_amount,
+  best_cities_amount,
 }: ContinentDetailsProps) {
   return (
     <Container
@@ -30,9 +29,9 @@ export default function ContinentDetails({
         align='center'
         justify='center'
       >
-        <InfoCard title='países' amount={countriesAmount} />
-        <InfoCard title='línguas' amount={languagesAmount} />
-        <InfoCard title='cidades +100' amount={bestCitiesAmount} />
+        <InfoCard title='países' amount={countries_amount} />
+        <InfoCard title='línguas' amount={languages_amount} />
+        <InfoCard title='cidades +100' amount={best_cities_amount} />
       </HStack>
     </Container>
   )

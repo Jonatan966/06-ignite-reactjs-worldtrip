@@ -1,14 +1,11 @@
-interface ContinentDetails {
-  countriesAmount: number,
-  languagesAmount: number,
-  bestCitiesAmount: number,
-}
-
 export default interface Continent {
-  image: string,
+  image: {
+    url: string,
+  },
   name: string,
   description: string,
   summary: string,
   slug: string,
-  details: ContinentDetails,
+  countries_amount: number,
+  languages_amount: number,
 }
