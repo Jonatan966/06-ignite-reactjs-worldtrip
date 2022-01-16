@@ -1,7 +1,5 @@
 export default interface Continent {
-  image: {
-    url: string,
-  },
+  image: string,
   name: string,
   description: string,
   summary: string,

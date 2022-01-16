@@ -13,7 +13,7 @@ export function ContinentSlide({
     <Link passHref href={`/continents/${slug}`}>
       <Center height='100%' cursor='pointer'>
         <Image 
-          src={image.url} 
+          src={image} 
           alt='img'
           objectFit='cover'
           width='100%'

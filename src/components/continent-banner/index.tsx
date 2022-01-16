@@ -13,7 +13,7 @@ export default function ContinentBanner({ name, image }: ContinentBannerProps) {
       h={500}
       justify='center'
     >
-      <ContinentImage image={image.url} alt={name} />
+      <ContinentImage image={image} alt={name} />
       <ContinentName>
         {name}
       </ContinentName>
